@@ -9,7 +9,7 @@ import { SvgMap } from 'vue-svg-map'
 import World from '@svg-maps/world'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Map',
   components: {
     SvgMap
   },
