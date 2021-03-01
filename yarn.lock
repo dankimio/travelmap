@@ -8129,6 +8129,11 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
+vue-svg-map@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vue-svg-map/-/vue-svg-map-1.2.0.tgz#44256a330045c73e7474af0714b5ca1c19ed270b"
+  integrity sha512-CAz4G80dnZ61+X8jAa7aeXHJBg3gNnJdTzUyVXbkZmwBLeh0hL9M47tm5Fpmd20AMsTY+GF7bbL+HvhWM3NlGw==
+
 vue-template-compiler@^2.6.11:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.12.tgz#947ed7196744c8a5285ebe1233fe960437fcc57e"
