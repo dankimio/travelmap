@@ -44,5 +44,6 @@ export default {
 
 .svg-map__location[aria-checked="true"] {
   fill: #34D399;
+  stroke: #ECFDF5;
 }
 </style>
