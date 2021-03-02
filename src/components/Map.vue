@@ -5,18 +5,13 @@
     <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-10" />
 
     <div class="mb-10" style="min-height: 100px">
-      <span
+      <country-label
         v-for="countryCode in selectedCountries"
         :key="countryCode"
-        class="px-4 py-1 mr-1 mb-2 inline-block
-        border rounded-full text-sm
-        hover:bg-gray-800 hover:text-white hover:border-gray-800
-        cursor-pointer"
-        :country-code="countryCode"
-        @click="removeCountry"
-      >
-        {{ allCountries.find(country => country.code === countryCode).name }}
-      </span>
+        :name="allCountries.find(country => countryCode === country.code).name"
+        :code="countryCode"
+        @remove-country="removeCountry"
+       />
     </div>
   </div>
 </template>
@@ -26,12 +21,14 @@ import { CheckboxSvgMap } from 'vue-svg-map'
 import World from '@svg-maps/world'
 import countries from 'countries-list'
 
+import CountryLabel from './CountryLabel'
 import SearchInput from './SearchInput'
 
 export default {
   name: 'Map',
   components: {
     CheckboxSvgMap,
+    CountryLabel,
     SearchInput
   },
   data() {
@@ -54,9 +51,8 @@ export default {
         this.selectedCountries.push(countryCode)
       }
     },
-    removeCountry(event) {
-      const countryCode = event.target.getAttribute('country-code')
-      this.selectedCountries = this.selectedCountries.filter(value => value !== countryCode)
+    removeCountry(code) {
+      this.selectedCountries = this.selectedCountries.filter(value => value !== code)
     }
   }
 }
