@@ -5,6 +5,11 @@
     <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-10" />
 
     <div class="mb-10" style="min-height: 100px">
+      <p class="mb-4 text-semibold text-lg text-gray-800">
+        Total countries:
+        {{ selectedCountries.length }}
+      </p>
+
       <country-label
         v-for="countryCode in selectedCountries"
         :key="countryCode"
@@ -34,7 +39,7 @@ export default {
   data() {
     return {
       World,
-      selectedCountries: ['ru', 'gb', 'us', 'br', 'cn', 'au', 'ca', 'fr', 'es', 'in'],
+      selectedCountries: ['ru', 'gb', 'au', 'fr', 'es'],
       allCountries: Object.entries(countries.countries).map(entry => {
         return {
           code: entry[0].toLowerCase(),
