@@ -12,9 +12,8 @@
 
       <country-label
         v-for="countryCode in selectedCountries"
+        :country="allCountries.find(country => countryCode === country.code)"
         :key="countryCode"
-        :name="allCountries.find(country => countryCode === country.code).name"
-        :code="countryCode"
         @remove-country="removeCountry"
        />
     </div>
