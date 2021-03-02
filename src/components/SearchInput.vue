@@ -22,10 +22,9 @@ export default {
 
 <style>
 #autosuggest__input {
+  @apply rounded-lg px-4 py-3 text-lg border-2 border-gray-300;
   position: relative;
   display: block;
-  border: 1px solid;
-  padding: 1rem;
   width: 100%;
 }
 
@@ -35,12 +34,10 @@ export default {
 }
 
 .autosuggest__results {
-  margin: 0;
+  @apply top-1 rounded-lg bg-white border-2 border-gray-100;
+
   position: absolute;
   width: 100%;
-  border: 1px solid;
-  background: white;
-  padding: 0;
 }
 
 .autosuggest__results ul {
@@ -50,22 +47,12 @@ export default {
 }
 
 .autosuggest__results .autosuggest__results-item {
+  @apply px-4 py-3 hover:bg-gray-100;
   cursor: pointer;
-}
-
-.autosuggest__results .autosuggest__results-before {
-  color: gray;
-  border-top: 1px solid lightgray;
 }
 
 .autosuggest__results{
   overflow: scroll;
   max-height: 400px;
-}
-
-.autosuggest__results .autosuggest__results-after {
-  color: gray;
-  margin-left: 0;
-  border-top: 1px solid lightgray;
 }
 </style>
