@@ -87,17 +87,20 @@ export default {
       const newURL = new URL(window.location.href)
 
       const params = new URLSearchParams(newURL.search)
-      params.set('countries', this.selectedCountries.join(','))
+      if (this.selectedCountries.length > 0) {
+        params.set('countries', this.selectedCountries.join(','))
+      } else {
+        params.delete('countries')
+      }
       newURL.search = params
 
       const formattedURL = newURL.toString().replaceAll('%2C', ',')
+      history.pushState({}, null, formattedURL)
 
       if (this.selectedCountries.length > 0) {
         this.shareURL = formattedURL
-        history.pushState({}, null, formattedURL)
       } else {
         this.shareURL = ''
-        history.pushState({}, null, new URL(window.location.href))
       }
     }
   },
