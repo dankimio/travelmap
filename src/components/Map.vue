@@ -38,13 +38,20 @@ export default {
   data() {
     return {
       World,
-      selectedCountries: ['ru', 'gb', 'au', 'fr', 'es'],
+      selectedCountries: [],
       allCountries: Object.entries(countries.countries).map(entry => {
         return {
           code: entry[0].toLowerCase(),
           ...entry[1]
         }
       })
+    }
+  },
+  created() {
+    const urlParams = new URLSearchParams(window.location.search)
+
+    if (this.selectedCountries.length === 0 && urlParams.has('countries')) {
+      this.selectedCountries = urlParams.get('countries').split(',')
     }
   },
   methods: {
@@ -57,6 +64,21 @@ export default {
     },
     removeCountry(code) {
       this.selectedCountries = this.selectedCountries.filter(value => value !== code)
+    },
+    updateURL() {
+      const newURL = new URL(window.location.href)
+
+      const params = new URLSearchParams(newURL.search)
+      params.set('countries', this.selectedCountries.join(','))
+      newURL.search = params
+
+      const formattedURL = newURL.toString().replaceAll('%2C', ',')
+      history.pushState({}, null, formattedURL)
+    }
+  },
+  watch: {
+    selectedCountries() {
+      this.updateURL()
     }
   }
 }
