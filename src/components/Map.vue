@@ -1,10 +1,10 @@
 <template>
   <div class="max-w-4xl mx-auto py-8 px-4">
-    <SearchInput class="mb-10" :all-countries="allCountries" @add-country="addCountry" />
+    <SearchInput class="mb-8" :all-countries="allCountries" @add-country="addCountry" />
 
-    <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-10" />
+    <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-8" />
 
-    <div class="mb-10" style="min-height: 100px">
+    <div class="mb-8" style="min-height: 100px">
       <p class="mb-4 text-semibold text-lg text-gray-800 text-right">
         Total countries:
         {{ selectedCountries.length }}
