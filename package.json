@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@svg-maps/world": "^1.0.1",
-    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
     "countries-list": "^2.6.1",
