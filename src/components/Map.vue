@@ -140,4 +140,12 @@ export default {
 .svg-map__location[aria-checked="true"]:hover {
   @apply text-green-500 fill-current stroke-current;
 }
+
+/* Extract CSS */
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
 </style>
