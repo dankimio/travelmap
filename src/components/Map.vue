@@ -2,6 +2,8 @@
   <div class="max-w-4xl mx-auto py-12 px-4">
     <SearchInput class="mb-6" :all-countries="allCountries" @add-country="addCountry" />
 
+    <checkbox-svg-map v-model="selectedCountries" :map="World" />
+
     <div class="mb-8">
       <span
         v-for="country in selectedCountries"
@@ -16,8 +18,6 @@
         {{ allCountries[country.toUpperCase()].name }}
       </span>
     </div>
-
-    <checkbox-svg-map v-model="selectedCountries" :map="World" />
   </div>
 </template>
 
