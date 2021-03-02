@@ -86,5 +86,4 @@ export default {
 .svg-map__location[aria-checked="true"]:hover {
   @apply text-green-500 fill-current stroke-current;
 }
-
 </style>
