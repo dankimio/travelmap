@@ -1,6 +1,14 @@
 <template>
-  <div class="max-w-5xl mx-auto">
-    <checkbox-svg-map v-model="selectedLocations" :map="World" />
+  <div class="max-w-4xl mx-auto p-12">
+    <checkbox-svg-map v-model="countries" :map="World" />
+
+    <div>
+      <h2>Countries</h2>
+
+      <div v-for="country in countries" :key="country">
+        {{ country }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,7 +24,7 @@ export default {
   data() {
     return {
       World,
-      selectedLocations: []
+      countries: ['ru']
     }
   }
 }
