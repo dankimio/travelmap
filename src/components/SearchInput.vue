@@ -32,6 +32,7 @@ export default {
           data: Object.entries(this.allCountries).map(country => {
             return { code: country[0], name: country[1].name }
           })
+            .sort((a, b) => a.name > b.name)
         }
       ]
     },
