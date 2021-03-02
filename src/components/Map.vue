@@ -6,16 +6,16 @@
 
     <div class="mb-10" style="min-height: 100px">
       <span
-        v-for="country in selectedCountries"
-        :key="country"
+        v-for="countryCode in selectedCountries"
+        :key="countryCode"
         class="px-4 py-1 mr-1 mb-2 inline-block
         border rounded-full text-sm
         hover:bg-gray-800 hover:text-white hover:border-gray-800
         cursor-pointer"
-        :country-code="country"
+        :country-code="countryCode"
         @click="removeCountry"
       >
-        {{ allCountries[country.toUpperCase()].name }}
+        {{ allCountries.find(country => country.code === countryCode).name }}
       </span>
     </div>
   </div>
@@ -38,7 +38,12 @@ export default {
     return {
       World,
       selectedCountries: ['ru', 'gb', 'us', 'br', 'cn', 'au', 'ca', 'fr', 'es', 'in'],
-      allCountries: countries.countries
+      allCountries: Object.entries(countries.countries).map(entry => {
+        return {
+          code: entry[0].toLowerCase(),
+          ...entry[1]
+        }
+      })
     }
   },
   methods: {

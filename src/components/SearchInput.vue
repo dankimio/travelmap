@@ -22,25 +22,20 @@ export default {
   props: ['allCountries'],
   data() {
     return {
-      query: ''
+      query: '',
+      suggestions: this.allCountries
+        .map(country => {
+          return { code: country.code, name: country.name }
+        })
+        .sort((a, b) => a.name > b.name)
     }
   },
   computed: {
-    suggestions() {
-      return [
-        {
-          data: Object.entries(this.allCountries).map(country => {
-            return { code: country[0], name: country[1].name }
-          })
-            .sort((a, b) => a.name > b.name)
-        }
-      ]
-    },
     filteredOptions() {
       return [
         {
-          data: this.suggestions[0].data.filter(option => {
-            return option.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1
+          data: this.suggestions.filter(country => {
+            return country.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1
           })
         }
       ]
