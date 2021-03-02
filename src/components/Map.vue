@@ -4,7 +4,7 @@
 
     <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-8" />
 
-    <div class="mb-8" style="min-height: 100px">
+    <div class="mb-8">
       <p class="mb-4 text-semibold text-lg text-gray-800 text-right">
         Total countries:
         {{ selectedCountries.length }}
@@ -16,6 +16,18 @@
         :key="countryCode"
         @remove-country="removeCountry"
        />
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Share</h2>
+
+      <input
+        v-model="shareURL"
+        type="text"
+        placeholder="Select at least one country to share your result"
+        readonly
+        class="mb-4 px-3 py-2 border-2 rounded-lg block w-full"
+      >
     </div>
   </div>
 </template>
@@ -44,14 +56,20 @@ export default {
           code: entry[0].toLowerCase(),
           ...entry[1]
         }
-      })
+      }),
+      shareURL: ''
     }
   },
   created() {
     const urlParams = new URLSearchParams(window.location.search)
 
     if (this.selectedCountries.length === 0 && urlParams.has('countries')) {
-      this.selectedCountries = urlParams.get('countries').split(',')
+      const parsedCountries = urlParams.get('countries').split(',').filter(code => code.length)
+
+      if (parsedCountries.length <= 0) {
+        return
+      }
+      this.selectedCountries = parsedCountries
     }
   },
   methods: {
@@ -73,7 +91,14 @@ export default {
       newURL.search = params
 
       const formattedURL = newURL.toString().replaceAll('%2C', ',')
-      history.pushState({}, null, formattedURL)
+
+      if (this.selectedCountries.length > 0) {
+        this.shareURL = formattedURL
+        history.pushState({}, null, formattedURL)
+      } else {
+        this.shareURL = ''
+        history.pushState({}, null, new URL(window.location.href))
+      }
     }
   },
   watch: {
