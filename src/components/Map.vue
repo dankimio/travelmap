@@ -5,7 +5,7 @@
     <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-10" />
 
     <div class="mb-10" style="min-height: 100px">
-      <p class="mb-4 text-semibold text-lg text-gray-800">
+      <p class="mb-4 text-semibold text-lg text-gray-800 text-right">
         Total countries:
         {{ selectedCountries.length }}
       </p>
