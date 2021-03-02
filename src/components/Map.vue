@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-4xl mx-auto py-12 px-4">
-    <checkbox-svg-map v-model="selectedCountries" :map="World" />
+    <SearchInput class="mb-6" />
 
-    <div class="mt-8">
+    <div class="mb-8">
       <span
         v-for="country in selectedCountries"
         :key="country"
@@ -16,6 +16,8 @@
         {{ allCountries[country.toUpperCase()].name }}
       </span>
     </div>
+
+    <checkbox-svg-map v-model="selectedCountries" :map="World" />
   </div>
 </template>
 
@@ -24,10 +26,13 @@ import { CheckboxSvgMap } from 'vue-svg-map'
 import World from '@svg-maps/world'
 import countries from 'countries-list'
 
+import SearchInput from './SearchInput'
+
 export default {
   name: 'Map',
   components: {
-    CheckboxSvgMap
+    CheckboxSvgMap,
+    SearchInput
   },
   data() {
     return {
