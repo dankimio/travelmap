@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     removeCountry(event) {
-      let countryCode = event.target.getAttribute('country-code')
+      const countryCode = event.target.getAttribute('country-code')
       this.selectedCountries = this.selectedCountries.filter(value => value !== countryCode)
     }
   }

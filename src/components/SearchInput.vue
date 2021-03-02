@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { VueAutosuggest } from 'vue-autosuggest';
+import { VueAutosuggest } from 'vue-autosuggest'
 
 export default {
   components: { VueAutosuggest }
