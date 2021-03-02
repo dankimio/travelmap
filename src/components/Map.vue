@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl mx-auto p-12">
+  <div class="max-w-4xl mx-auto py-12 px-4">
     <checkbox-svg-map v-model="selectedCountries" :map="World" />
 
     <div class="mt-8">
