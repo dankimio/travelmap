@@ -1,10 +1,10 @@
 <template>
-  <div class="max-w-4xl mx-auto py-12 px-4">
-    <SearchInput class="mb-6" :all-countries="allCountries" @add-country="addCountry" />
+  <div class="max-w-4xl mx-auto py-8 px-4">
+    <SearchInput class="mb-10" :all-countries="allCountries" @add-country="addCountry" />
 
-    <checkbox-svg-map v-model="selectedCountries" :map="World" />
+    <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-10" />
 
-    <div class="mb-8">
+    <div class="mb-10" style="min-height: 100px">
       <span
         v-for="country in selectedCountries"
         :key="country"
