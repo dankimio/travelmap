@@ -1,7 +1,8 @@
 <template>
   <span
     class="px-4 py-1 mr-1 mb-2 inline-block
-    border rounded-full text-sm
+    text-gray-900
+    bg-gray-100 border border-gray-300 rounded-lg text-xs md:text-sm
     hover:bg-gray-800 hover:text-white hover:border-gray-800
     cursor-pointer"
     @click="onClick"
