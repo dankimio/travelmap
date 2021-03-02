@@ -1,7 +1,8 @@
 <template>
   <div>
     <vue-autosuggest
-      :suggestions="suggestions"
+      v-model="query"
+      :suggestions="filteredOptions"
       :input-props="{id:'autosuggest__input', placeholder:'Start typing country…'}"
       :get-suggestion-value="() => ''"
       @selected="onSelected"
@@ -19,12 +20,26 @@ import { VueAutosuggest } from 'vue-autosuggest'
 export default {
   components: { VueAutosuggest },
   props: ['allCountries'],
+  data() {
+    return {
+      query: ''
+    }
+  },
   computed: {
     suggestions() {
       return [
         {
           data: Object.entries(this.allCountries).map(country => {
             return { code: country[0], name: country[1].name }
+          })
+        }
+      ]
+    },
+    filteredOptions() {
+      return [
+        {
+          data: this.suggestions[0].data.filter(option => {
+            return option.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1
           })
         }
       ]
