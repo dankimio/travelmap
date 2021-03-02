@@ -2855,6 +2855,11 @@ countries-list@^2.6.1:
   resolved "https://registry.yarnpkg.com/countries-list/-/countries-list-2.6.1.tgz#d479757ac873b1e596ccea0a925962d20396c0cb"
   integrity sha512-jXM1Nv3U56dPQ1DsUSsEaGmLHburo4fnB7m+1yhWDUVvx5gXCd1ok/y3gXCjXzhqyawG+igcPYcAl4qjkvopaQ==
 
+country-emoji@^1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/country-emoji/-/country-emoji-1.5.4.tgz#51501258ec8c1326495a49370e45d64175f9d29d"
+  integrity sha512-zIuXbj+2HLBuCGEhDwVdRisigzkYxn8X0qlDCAuKghUsa0S4cmJswbx7pY8E38ecSdkaIxTbH2B6x8DHKG2D6Q==
+
 create-ecdh@^4.0.0:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.4.tgz#d6e7f4bffa66736085a0762fd3a632684dabcc4e"
