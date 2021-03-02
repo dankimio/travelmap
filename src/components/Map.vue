@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-4xl mx-auto py-12 px-4">
-    <SearchInput class="mb-6" />
+    <SearchInput class="mb-6" :all-countries="allCountries" />
 
     <div class="mb-8">
       <span
