@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-4xl mx-auto py-12 px-4">
-    <SearchInput class="mb-6" :all-countries="allCountries" />
+    <SearchInput class="mb-6" :all-countries="allCountries" @add-country="addCountry" />
 
     <div class="mb-8">
       <span
@@ -42,6 +42,13 @@ export default {
     }
   },
   methods: {
+    addCountry(code) {
+      const countryCode = code.toLowerCase()
+
+      if (this.selectedCountries.indexOf(countryCode) === -1) {
+        this.selectedCountries.push(countryCode)
+      }
+    },
     removeCountry(event) {
       const countryCode = event.target.getAttribute('country-code')
       this.selectedCountries = this.selectedCountries.filter(value => value !== countryCode)

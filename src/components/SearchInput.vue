@@ -3,12 +3,12 @@
     <vue-autosuggest
       :suggestions="suggestions"
       :input-props="{id:'autosuggest__input', placeholder:'Start typing country…'}"
+      :get-suggestion-value="() => ''"
       @selected="onSelected"
-      aria-placeholder="Start typing country…"
     >
-      <template slot-scope="{suggestion}">
+      <div slot-scope="{suggestion}">
         <span class="my-suggestion-item">{{suggestion.item.name}}</span>
-      </template>
+      </div>
     </vue-autosuggest>
   </div>
 </template>
@@ -24,15 +24,15 @@ export default {
       return [
         {
           data: Object.entries(this.allCountries).map(country => {
-            return { id: country[0], name: country[1].name }
+            return { code: country[0], name: country[1].name }
           })
         }
       ]
     }
   },
   methods: {
-    onSelected(item) {
-      console.log(item)
+    onSelected(suggestion) {
+      this.$emit('add-country', suggestion.item.code)
     }
   }
 }
