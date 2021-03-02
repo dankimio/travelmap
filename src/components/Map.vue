@@ -6,7 +6,12 @@
       <span
         v-for="country in selectedCountries"
         :key="country"
-        class="px-4 py-1 border mr-1 mb-2 inline-block rounded-full text-sm"
+        class="px-4 py-1 mr-1 mb-2 inline-block
+        border rounded-full text-sm
+        hover:bg-gray-800 hover:text-white hover:border-gray-800
+        cursor-pointer"
+        :country-code="country"
+        @click="removeCountry"
       >
         {{ allCountries[country.toUpperCase()].name }}
       </span>
@@ -29,6 +34,12 @@ export default {
       World,
       selectedCountries: ['ru', 'gb', 'us', 'br', 'cn', 'au', 'ca', 'fr', 'es', 'in'],
       allCountries: countries.countries
+    }
+  },
+  methods: {
+    removeCountry(event) {
+      let countryCode = event.target.getAttribute('country-code')
+      this.selectedCountries = this.selectedCountries.filter(value => value !== countryCode)
     }
   }
 }
