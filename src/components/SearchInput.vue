@@ -48,6 +48,7 @@ export default {
   },
   methods: {
     onSelected(suggestion) {
+      this.query = ''
       this.$emit('add-country', suggestion.item.code)
     }
   }
