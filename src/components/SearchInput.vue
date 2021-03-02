@@ -71,6 +71,6 @@ export default {
 
 .autosuggest__results{
   overflow: scroll;
-  max-height: 400px;
+  max-height: 240px;
 }
 </style>
