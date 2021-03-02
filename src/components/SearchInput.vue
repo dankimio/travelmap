@@ -8,8 +8,9 @@
       @selected="onSelected"
       class="mb-1"
     >
-      <div slot-scope="{suggestion}">
+      <div slot-scope="{suggestion}" class="flex justify-between">
         <span class="my-suggestion-item">{{suggestion.item.name}}</span>
+        <span>{{ suggestion.item.emoji }}</span>
       </div>
     </vue-autosuggest>
 
@@ -30,7 +31,7 @@ export default {
       query: '',
       suggestions: this.allCountries
         .map(country => {
-          return { code: country.code, name: country.name }
+          return { code: country.code, name: country.name, emoji: country.emoji }
         })
         .sort((a, b) => a.name > b.name)
     }
