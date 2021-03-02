@@ -3,14 +3,19 @@
     <vue-autosuggest
       v-model="query"
       :suggestions="filteredOptions"
-      :input-props="{id:'autosuggest__input', placeholder:'Start typing country…'}"
+      :input-props="{id:'autosuggest__input', placeholder: 'Search by country name…'}"
       :get-suggestion-value="() => ''"
       @selected="onSelected"
+      class="mb-1"
     >
       <div slot-scope="{suggestion}">
         <span class="my-suggestion-item">{{suggestion.item.name}}</span>
       </div>
     </vue-autosuggest>
+
+    <small class="text-gray-600">
+      Start typing country name or select a country on the map below.
+    </small>
   </div>
 </template>
 
