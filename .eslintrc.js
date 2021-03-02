@@ -19,5 +19,11 @@ module.exports = {
     'vue'
   ],
   rules: {
+    'space-before-function-paren': ['error', 'never'],
+    'eol-last': ['error', 'always'],
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 3,
+      multiline: 1
+    }]
   }
 }
