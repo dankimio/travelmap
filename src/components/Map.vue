@@ -1,13 +1,15 @@
 <template>
   <div class="max-w-4xl mx-auto p-12">
-    <checkbox-svg-map v-model="countries" :map="World" />
+    <checkbox-svg-map v-model="selectedCountries" :map="World" />
 
-    <div>
-      <h2>Countries</h2>
-
-      <div v-for="country in countries" :key="country">
-        {{ country }}
-      </div>
+    <div class="mt-8">
+      <span
+        v-for="country in selectedCountries"
+        :key="country"
+        class="px-4 py-1 border mr-1 mb-2 inline-block rounded-full text-sm"
+      >
+        {{ allCountries[country.toUpperCase()].name }}
+      </span>
     </div>
   </div>
 </template>
@@ -15,6 +17,7 @@
 <script>
 import { CheckboxSvgMap } from 'vue-svg-map'
 import World from '@svg-maps/world'
+import countries from 'countries-list'
 
 export default {
   name: 'Map',
@@ -24,7 +27,8 @@ export default {
   data() {
     return {
       World,
-      countries: ['ru']
+      selectedCountries: ['ru', 'gb', 'us', 'br', 'cn', 'au', 'ca', 'fr', 'es', 'in'],
+      allCountries: countries.countries
     }
   }
 }
