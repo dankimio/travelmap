@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-gray-50">
+  <div id="app">
     <Map />
   </div>
 </template>
