@@ -18,6 +18,7 @@
       />
     </div>
 
+    <!-- TODO: extract component -->
     <div>
       <h2 class="text-2xl font-semibold text-gray-800 mb-2">
         Share

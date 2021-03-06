@@ -10,6 +10,7 @@
 
       <Map class="mb-10" />
 
+      <!-- TODO: extract component -->
       <p class="text-gray-700 mb-2">
         Made by
         <a href="https://dankim.io" target="_blank">Dan Kim</a>.
@@ -19,6 +20,7 @@
         <a href="https://twitter.com/dankimio" target="_blank">Twitter</a>
         <a href="https://www.instagram.com/dankimio/" target="_blank">Instagram</a>
         <a href="https://github.com/dankimio" target="_blank">GitHub</a>
+        <a href="https://github.com/dankimio/travel-map" target="_blank">Source</a>
       </div>
     </div>
   </div>
