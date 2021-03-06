@@ -19,17 +19,13 @@
     </div>
 
     <div>
-      <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-2">
         Share
       </h2>
 
-      <input
-        v-model="shareURL"
-        type="text"
-        placeholder="Select at least one country to share your result"
-        readonly
-        class="mb-4 px-3 py-2 border-2 rounded-lg block w-full"
-      >
+      <a :href="shareURL" class="text-gray-900">
+        {{ shareURL }}
+      </a>
     </div>
   </div>
 </template>
