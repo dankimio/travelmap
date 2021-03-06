@@ -58,7 +58,7 @@ export default {
 
 <style>
 #autosuggest__input {
-  @apply rounded-lg px-4 py-3 text-lg border-2 border-gray-300;
+  @apply rounded-lg px-3 py-2 md:px-4 md:py-3 text-lg border-2 border-gray-300;
   position: relative;
   display: block;
   width: 100%;
