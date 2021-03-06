@@ -5,11 +5,11 @@
       :suggestions="filteredOptions"
       :input-props="{id:'autosuggest__input', placeholder: 'Search by country name…'}"
       :get-suggestion-value="() => ''"
-      @selected="onSelected"
       class="mb-1"
+      @selected="onSelected"
     >
       <div slot-scope="{suggestion}" class="flex justify-between">
-        <span class="my-suggestion-item">{{suggestion.item.name}}</span>
+        <span class="my-suggestion-item">{{ suggestion.item.name }}</span>
         <span>{{ suggestion.item.emoji }}</span>
       </div>
     </vue-autosuggest>
