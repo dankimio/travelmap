@@ -16,11 +16,11 @@
         <a href="https://dankim.io" target="_blank">Dan Kim</a>.
       </p>
 
-      <div class="flex gap-6 text-gray-800">
-        <a href="https://twitter.com/dankimio" target="_blank">Twitter</a>
-        <a href="https://www.instagram.com/dankimio/" target="_blank">Instagram</a>
-        <a href="https://github.com/dankimio" target="_blank">GitHub</a>
-        <a href="https://github.com/dankimio/travel-map" target="_blank">Source</a>
+      <div class="flex text-gray-800">
+        <a href="https://twitter.com/dankimio" target="_blank" class="mr-3 md:mr-6">Twitter</a>
+        <a href="https://www.instagram.com/dankimio/" target="_blank" class="mr-3 md:mr-6">Instagram</a>
+        <a href="https://github.com/dankimio" target="_blank" class="mr-3 md:mr-6">GitHub</a>
+        <a href="https://github.com/dankimio/travel-map" target="_blank" class="mr-3 md:mr-6">Source</a>
       </div>
     </div>
   </div>
