@@ -13,7 +13,6 @@
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
     "countries-list": "^2.6.1",
-    "country-emoji": "^1.5.4",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue": "^2.6.11",
