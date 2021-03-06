@@ -1,8 +1,8 @@
 <template>
-  <div class="max-w-4xl mx-auto py-8 px-4">
+  <div class="py-8 px-4">
     <SearchInput class="mb-8" :all-countries="allCountries" @add-country="addCountry" />
 
-    <checkbox-svg-map v-model="selectedCountries" :map="World" class="mb-8" />
+    <checkbox-svg-map v-model="selectedCountries" :map="World" class="max-w-5xl mx-auto mb-8" />
 
     <div class="mb-8">
       <p class="mb-4 text-semibold text-lg text-gray-800 text-right">
@@ -12,14 +12,16 @@
 
       <country-label
         v-for="countryCode in selectedCountries"
-        :country="allCountries.find(country => countryCode === country.code)"
         :key="countryCode"
+        :country="allCountries.find(country => countryCode === country.code)"
         @remove-country="removeCountry"
-       />
+      />
     </div>
 
     <div>
-      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Share</h2>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+        Share
+      </h2>
 
       <input
         v-model="shareURL"
@@ -58,6 +60,11 @@ export default {
         }
       }),
       shareURL: ''
+    }
+  },
+  watch: {
+    selectedCountries() {
+      this.updateURL()
     }
   },
   created() {
@@ -102,11 +109,6 @@ export default {
       } else {
         this.shareURL = ''
       }
-    }
-  },
-  watch: {
-    selectedCountries() {
-      this.updateURL()
     }
   }
 }
