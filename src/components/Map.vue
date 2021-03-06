@@ -24,7 +24,7 @@
         Share
       </h2>
 
-      <a :href="shareURL" class="text-gray-900 break-words">
+      <a :href="shareURL" class="text-gray-800 block w-full overflow-hidden leading-tight">
         {{ shareURL }}
       </a>
     </div>
