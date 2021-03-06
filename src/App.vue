@@ -5,7 +5,7 @@
         class="text-3xl font-bold mb-4 font-serif text-gray-900
           md:text-center md:text-4xl md:mb-8"
       >
-        Dan's Travel Map
+        Dan's Travel Map 🗺
       </h1>
 
       <Map class="mb-10" />
