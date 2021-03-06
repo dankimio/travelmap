@@ -8,13 +8,17 @@
         Dan's Travel Map
       </h1>
 
-      <Map />
+      <Map class="mb-10" />
+
+      <p class="text-gray-700 mb-2">
+        Made by
+        <a href="https://dankim.io" target="_blank">Dan Kim</a>.
+      </p>
 
       <div class="flex gap-6 text-gray-800">
-        <a href="https://dankim.io" target="_blank">Dan Kim</a>
-        <a href="" target="_blank">Twitter</a>
-        <a href="" target="_blank">Instagram</a>
-        <a href="" target="_blank">Dan Kim</a>
+        <a href="https://twitter.com/dankimio" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/dankimio/" target="_blank">Instagram</a>
+        <a href="https://github.com/dankimio" target="_blank">GitHub</a>
       </div>
     </div>
   </div>
