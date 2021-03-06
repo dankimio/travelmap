@@ -5,7 +5,7 @@
       :suggestions="filteredOptions"
       :input-props="{id:'autosuggest__input', placeholder: 'Search by country name…'}"
       :get-suggestion-value="() => ''"
-      class="mb-1"
+      class="mb-2"
       @selected="onSelected"
     >
       <div slot-scope="{suggestion}" class="flex justify-between">
@@ -14,7 +14,7 @@
       </div>
     </vue-autosuggest>
 
-    <small class="text-gray-600">
+    <small class="text-gray-600 block leading-tight">
       Start typing country name or select a country on the map below.
     </small>
   </div>
