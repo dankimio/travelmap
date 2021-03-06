@@ -1,5 +1,5 @@
 <template>
-  <div class="py-8 px-4">
+  <div>
     <SearchInput class="mb-8" :all-countries="allCountries" @add-country="addCountry" />
 
     <checkbox-svg-map v-model="selectedCountries" :map="World" class="max-w-5xl mx-auto mb-8" />
