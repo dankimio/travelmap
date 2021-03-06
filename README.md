@@ -1,5 +1,7 @@
 # Travel Map
 
+![Screenshot](./screenshot.png)
+
 ## Project setup
 ```
 yarn install
