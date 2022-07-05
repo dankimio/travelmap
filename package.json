@@ -8,18 +8,17 @@
   },
   "dependencies": {
     "@svg-maps/world": "^1.0.1",
-    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
-    "autoprefixer": "^9",
+    "autoprefixer": "^10.4.0",
     "core-js": "^3.6.5",
     "countries-list": "^2.6.1",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^2.2.0",
     "vue": "^2.6.11",
     "vue-autosuggest": "^2.2.0",
     "vue-svg-map": "^1.2.0"
   },
   "devDependencies": {
-    "@vue/cli-service": "^4.5.0",
+    "@vue/cli-service": "^5.0.0",
     "eslint": "^7.0.0",
     "vue-template-compiler": "^2.6.11"
   }
