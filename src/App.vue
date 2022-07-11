@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container mx-auto px-8 py-8">
+    <div class="container mx-auto px-8 py-8 md:py-10 lg:py-12">
       <h1
         class="text-3xl font-bold mb-4 text-gray-900
           md:text-4xl md:mb-8"
