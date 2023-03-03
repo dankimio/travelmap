@@ -5,7 +5,7 @@
       :suggestions="filteredOptions"
       :input-props="{id:'autosuggest__input', placeholder: 'Search by country name…'}"
       :get-suggestion-value="() => ''"
-      class="mb-1"
+      class="mb-2"
       @selected="onSelected"
     >
       <div slot-scope="{suggestion}" class="flex justify-between">
