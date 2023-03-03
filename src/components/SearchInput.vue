@@ -1,13 +1,8 @@
 <template>
   <div>
-    <vue-autosuggest
-      v-model="query"
-      :suggestions="filteredOptions"
-      :input-props="{id:'autosuggest__input', placeholder: 'Search by country name…'}"
-      :get-suggestion-value="() => ''"
-      class="mb-2"
-      @selected="onSelected"
-    >
+    <vue-autosuggest v-model="query" :suggestions="filteredOptions"
+      :input-props="{ id: 'autosuggest__input', placeholder: 'Search by country name…' }" :get-suggestion-value="() => ''"
+      class="mb-2" @selected="onSelected">
       <div slot-scope="{suggestion}" class="flex justify-between">
         <span class="my-suggestion-item">{{ suggestion.item.name }}</span>
         <span>{{ suggestion.item.emoji }}</span>
