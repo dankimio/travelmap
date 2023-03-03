@@ -10,12 +10,8 @@
         {{ selectedCountries.length }}
       </p>
 
-      <country-label
-        v-for="countryCode in selectedCountries"
-        :key="countryCode"
-        :country="allCountries.find(country => countryCode === country.code)"
-        @remove-country="removeCountry"
-      />
+      <country-label v-for="countryCode in selectedCountries" :key="countryCode"
+        :country="allCountries.find(country => countryCode === country.code)" @remove-country="removeCountry" />
     </div>
 
     <!-- TODO: extract component -->
@@ -126,7 +122,8 @@ export default {
   cursor: pointer;
 }
 
-.svg-map__location:focus, .svg-map__location:hover {
+.svg-map__location:focus,
+.svg-map__location:hover {
   fill: #1F2937;
   outline: 0;
 }
