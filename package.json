@@ -8,17 +8,17 @@
   },
   "dependencies": {
     "@svg-maps/world": "^1.0.1",
-    "autoprefixer": "^10.4.0",
-    "core-js": "^3.6.5",
+    "autoprefixer": "^10.4.13",
+    "core-js": "^3.29.0",
     "countries-list": "^2.6.1",
-    "postcss": "^8.4.0",
-    "tailwindcss": "^2.2.0",
-    "vue": "^2.6.11",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^2.2.19",
+    "vue": "^2.7.14",
     "vue-autosuggest": "^2.2.0",
     "vue-svg-map": "^1.2.0"
   },
   "devDependencies": {
-    "@vue/cli-service": "^5.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "@vue/cli-service": "^5.0.8",
+    "vue-template-compiler": "^2.7.14"
   }
 }
