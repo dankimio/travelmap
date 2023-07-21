@@ -9,7 +9,7 @@
       </div>
     </vue-autosuggest>
 
-    <small class="text-gray-500 block leading-tight text-xs md:text-sm">
+    <small class="px-3 md:px-4 text-gray-500 block leading-tight text-xs md:text-sm">
       Start typing country name or select a country on the map below.
     </small>
   </div>
@@ -53,10 +53,15 @@ export default {
 
 <style>
 #autosuggest__input {
-  @apply rounded px-3 py-2 md:px-4 md:py-3 text-lg border-2 border-gray-300;
+  @apply rounded-md px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl;
   position: relative;
   display: block;
   width: 100%;
+  outline: none;
+
+  &::placeholder {
+    @apply italic;
+  }
 }
 
 .autosuggest__results-container {
