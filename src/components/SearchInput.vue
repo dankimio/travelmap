@@ -8,10 +8,6 @@
         <span>{{ suggestion.item.emoji }}</span>
       </div>
     </vue-autosuggest>
-
-    <small class="px-3 md:px-4 text-gray-500 block leading-tight text-xs md:text-sm">
-      Start typing country name or select a country on the map below.
-    </small>
   </div>
 </template>
 
