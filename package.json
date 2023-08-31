@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "@svg-maps/world": "^1.0.1",
-    "autoprefixer": "^10.4.13",
-    "core-js": "^3.29.0",
+    "autoprefixer": "^10.4.15",
+    "core-js": "^3.32.1",
     "countries-list": "^2.6.1",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.29",
     "tailwindcss": "^2.2.19",
     "vue": "^2.7.14",
     "vue-autosuggest": "^2.2.0",
