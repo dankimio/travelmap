@@ -6,7 +6,7 @@
     <title>Travel Map</title>
   </head>
   <body>
-    <div id="app" x-data>
+    <div id="app" x-data x-init="$store.travel.init()">
       <div class="container mx-auto px-8 py-8 md:py-10 lg:py-12">
         <div class="mb-8" id="search-input">
           <input
@@ -33,7 +33,7 @@
             <template x-for="country in $store.travel.selectedCountries" :key="country.code">
               <div
                 class="px-4 py-1 mr-1 mb-2 inline-block bg-gray-200 rounded-lg text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer"
-                @click="window.travelMap.removeCountry(country.code)"
+                @click="$store.travel.removeCountry(country.code)"
               >
                 <span x-text="country.name"></span>
                 <span class="ml-1" x-text="country.emoji"></span>
