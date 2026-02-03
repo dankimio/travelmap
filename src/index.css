@@ -1,3 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@reference "tailwindcss/utilities";
+
+.svg-map {
+  width: 100%;
+  height: auto;
+  stroke: #666;
+  stroke-width: 0.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.svg-map__location {
+  fill: black;
+  cursor: pointer;
+}
+
+.svg-map__location:focus,
+.svg-map__location:hover {
+  @apply fill-gray-800 outline-0;
+}
+
+.svg-map__location[aria-checked="true"] {
+  @apply fill-emerald-400 stroke-emerald-50;
+}
+
+.svg-map__location[aria-checked="true"]:hover {
+  @apply text-emerald-500 fill-current stroke-current;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+#autosuggest__input {
+  @apply rounded-md px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl;
+  position: relative;
+  display: block;
+  width: 100%;
+  outline: none;
+}
+
+#autosuggest__input::placeholder {
+  @apply italic;
+}
+
+.autosuggest__results-container {
+  position: relative;
+  width: 100%;
+}
+
+.autosuggest__results {
+  @apply top-1 rounded-lg bg-white border-2 border-gray-100;
+  position: absolute;
+  width: 100%;
+}
+
+.autosuggest__results ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.autosuggest__results .autosuggest__results-item {
+  @apply px-4 py-3 hover:bg-gray-100;
+  cursor: pointer;
+}
+
+.autosuggest__results {
+  overflow: auto;
+  max-height: 200px;
+}
