@@ -11,85 +11,84 @@
       rel="stylesheet"
     />
   </head>
-  <body class="font-sans">
-    <div x-data x-init="$store.travel.init()">
-      <div class="max-w-6xl mx-auto px-6 md:px-8 py-6 md:py-8">
-        <div class="mb-10 md:mb-14 lg:max-w-md" id="search-input">
-          <input
-            id="autosuggest__input"
-            class="rounded-md px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl w-full outline-none ring-1 ring-gray-300 focus:ring-gray-400"
-            type="text"
-            autocomplete="off"
-            placeholder="Search by country name…"
-          />
-          <div class="relative w-full">
-            <div
-              class="absolute top-1 w-full rounded-lg bg-white border border-gray-200 shadow-lg hidden overflow-auto max-h-[200px]"
-              id="autosuggest-results"
-            >
-              <ul id="autosuggest-list" class="list-none p-0 m-0"></ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="max-w-5xl mx-auto mb-8" id="map-container"></div>
-
-        <div class="mb-8">
-          <p class="mb-4 text-xl tabular-nums space-x-0.5">
-            <span class="uppercase text-gray-500">Total</span>
-            <span class="font-medium" x-text="$store.travel.selectedCountries.length"></span>
-          </p>
-
-          <div class="flex flex-wrap gap-y-2 gap-x-1.5">
-            <template x-for="country in $store.travel.selectedCountries" :key="country.code">
-              <div
-                class="px-3 py-1.5 inline-block bg-gray-200 rounded-full text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer space-x-0.5"
-                @click="$store.travel.removeCountry(country.code)"
-              >
-                <span x-text="country.emoji"></span>
-                <span x-text="country.name"></span>
-              </div>
-            </template>
-          </div>
-        </div>
-
-        <div class="mb-8" x-show="$store.travel.shareUrl">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-2" x-show="$store.travel.shareUrl">
-            Share
-          </h2>
-          <a
-            class="text-gray-800 inline-flex items-center gap-x-2 overflow-hidden leading-tight rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm md:text-base"
-            :href="$store.travel.shareUrl"
-            @click.prevent="$store.travel.copyShareUrl()"
+  <body class="font-sans text-gray-900" x-data x-init="$store.travel.init()">
+    <div class="max-w-6xl mx-auto px-6 md:px-8 py-6 md:py-8">
+      <div class="mb-10 md:mb-14 lg:max-w-md" id="search-input">
+        <input
+          id="autosuggest__input"
+          class="rounded-md px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl w-full outline-none ring-1 ring-gray-300 focus:ring-gray-400"
+          type="text"
+          autocomplete="off"
+          placeholder="Search by country name…"
+        />
+        <div class="relative w-full">
+          <div
+            class="absolute top-1 w-full rounded-lg bg-white border border-gray-200 shadow-lg hidden overflow-auto max-h-[200px]"
+            id="autosuggest-results"
           >
-            <span class="truncate" x-text="$store.travel.shareUrl"></span>
-            <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M8 2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6.414a2 2 0 0 0-.586-1.414l-2.414-2.414A2 2 0 0 0 11.586 2H8Zm3.586 1L15 6.414V13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h3.586ZM4 6a1 1 0 0 0-1 1v9a3 3 0 0 0 3 3h6a1 1 0 1 0 0-2H6a1 1 0 0 1-1-1V7a1 1 0 0 0-1-1Z"/>
-            </svg>
-          </a>
-        </div>
-
-        <p class="text-gray-700 mb-2">
-          Made by
-          <a href="https://dan.kim" target="_blank" class="underline hover:text-gray-500">Dan Kim</a>.
-        </p>
-
-        <div class="flex text-gray-800 gap-x-3 md:gap-x-4">
-          <a href="https://twitter.com/dankimio" target="_blank" class="underline hover:text-gray-600">
-            Twitter
-          </a>
-          <a href="https://www.instagram.com/dankimio/" target="_blank" class="underline hover:text-gray-600">
-            Instagram
-          </a>
-          <a href="https://github.com/dankimio" target="_blank" class="underline hover:text-gray-600">
-            GitHub
-          </a>
-          <a href="https://github.com/dankimio/travel-map" target="_blank" class="underline hover:text-gray-600">
-            Source
-          </a>
+            <ul id="autosuggest-list" class="list-none p-0 m-0"></ul>
+          </div>
         </div>
       </div>
+
+      <div class="max-w-5xl mx-auto mb-8" id="map-container"></div>
+
+      <div class="mb-8">
+        <p class="mb-4 text-xl tabular-nums space-x-0.5">
+          <span class="uppercase text-gray-500">Total</span>
+          <span class="font-medium" x-text="$store.travel.selectedCountries.length"></span>
+        </p>
+
+        <div class="flex flex-wrap gap-y-2 gap-x-1.5">
+          <template x-for="country in $store.travel.selectedCountries" :key="country.code">
+            <div
+              class="px-3 py-1.5 inline-block bg-gray-200 rounded-full text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer space-x-0.5"
+              @click="$store.travel.removeCountry(country.code)"
+            >
+              <span x-text="country.emoji"></span>
+              <span x-text="country.name"></span>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="mb-8" x-show="$store.travel.shareUrl">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-2" x-show="$store.travel.shareUrl">
+          Share
+        </h2>
+        <a
+          class="text-gray-800 inline-flex items-center gap-x-2 overflow-hidden leading-tight rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm md:text-base"
+          :href="$store.travel.shareUrl"
+          @click.prevent="$store.travel.copyShareUrl()"
+        >
+          <span class="truncate" x-text="$store.travel.shareUrl"></span>
+          <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M8 2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6.414a2 2 0 0 0-.586-1.414l-2.414-2.414A2 2 0 0 0 11.586 2H8Zm3.586 1L15 6.414V13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h3.586ZM4 6a1 1 0 0 0-1 1v9a3 3 0 0 0 3 3h6a1 1 0 1 0 0-2H6a1 1 0 0 1-1-1V7a1 1 0 0 0-1-1Z"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="text-gray-700 mb-2">
+        Made by
+        <a href="https://dan.kim" target="_blank" class="underline hover:text-gray-500">Dan Kim</a>.
+      </p>
+
+      <div class="flex text-gray-800 gap-x-3 md:gap-x-4">
+        <a href="https://twitter.com/dankimio" target="_blank" class="underline hover:text-gray-600">
+          Twitter
+        </a>
+        <a href="https://www.instagram.com/dankimio/" target="_blank" class="underline hover:text-gray-600">
+          Instagram
+        </a>
+        <a href="https://github.com/dankimio" target="_blank" class="underline hover:text-gray-600">
+          GitHub
+        </a>
+        <a href="https://github.com/dankimio/travel-map" target="_blank" class="underline hover:text-gray-600">
+          Source
+        </a>
+      </div>
     </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
