@@ -29,14 +29,14 @@
             Total:
             <span id="total-count" x-text="$store.travel.selectedCountries.length"></span>
           </p>
-          <div id="country-labels">
+          <div id="country-labels" class="flex flex-wrap gap-y-2 gap-x-1.5">
             <template x-for="country in $store.travel.selectedCountries" :key="country.code">
               <div
-                class="px-4 py-1 mr-1 mb-2 inline-block bg-gray-200 rounded-lg text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer"
+                class="px-3 py-1.5 inline-block bg-gray-200 rounded-md text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer space-x-0.5"
                 @click="$store.travel.removeCountry(country.code)"
               >
+                <span x-text="country.emoji"></span>
                 <span x-text="country.name"></span>
-                <span class="ml-1" x-text="country.emoji"></span>
               </div>
             </template>
           </div>
