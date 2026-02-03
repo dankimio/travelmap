@@ -11,11 +11,15 @@
 }
 
 .svg-map__location {
+  @apply transition-colors duration-50 ease-out;
   fill: black;
   cursor: pointer;
 }
 
-.svg-map__location:focus,
+.svg-map__location:focus {
+  @apply outline-0;
+}
+
 .svg-map__location:hover {
   @apply fill-gray-800 outline-0;
 }
