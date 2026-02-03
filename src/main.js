@@ -157,6 +157,14 @@ document.addEventListener('alpine:init', () => {
 
       this.shareUrl = selectedCodes.length > 0 ? formattedURL : ''
     },
+    copyShareUrl() {
+      if (!this.shareUrl) {
+        return
+      }
+
+      navigator.clipboard.writeText(this.shareUrl)
+      alert('Link copied!')
+    },
     syncUI(options = {}) {
       this.updateMapSelection()
       this.updateCount()

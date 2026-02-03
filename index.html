@@ -51,6 +51,7 @@
             x-show="$store.travel.shareUrl"
             :href="$store.travel.shareUrl"
             x-text="$store.travel.shareUrl"
+            @click.prevent="$store.travel.copyShareUrl()"
           ></a>
         </div>
 
