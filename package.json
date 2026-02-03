@@ -3,22 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@svg-maps/world": "^1.0.1",
-    "autoprefixer": "^10.4.20",
-    "core-js": "^3.38.1",
-    "countries-list": "^2.6.1",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^2.2.19",
-    "vue": "^2.7.16",
-    "vue-autosuggest": "^2.2.0",
-    "vue-svg-map": "^1.2.0"
+    "alpinejs": "^3.15.8",
+    "countries-list": "^2.6.1"
   },
   "devDependencies": {
-    "@vue/cli-service": "^5.0.8",
-    "vue-template-compiler": "^2.7.16"
+    "@tailwindcss/postcss": "^4.1.18",
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "vite": "^7.3.1"
   }
 }
