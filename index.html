@@ -57,12 +57,12 @@
           Share
         </h2>
         <a
-          class="text-gray-800 inline-flex items-center gap-x-2 overflow-hidden leading-tight rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm md:text-base"
+          class="text-gray-800 inline-flex items-center gap-x-2 max-w-full overflow-hidden leading-tight rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm md:text-base"
           :href="$store.travel.shareUrl"
           @click.prevent="$store.travel.copyShareUrl()"
         >
-          <span class="truncate" x-text="$store.travel.shareUrl"></span>
-          <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <span class="min-w-0 flex-1 truncate" x-text="$store.travel.shareUrl"></span>
+          <svg class="h-4 w-4 text-gray-500 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path d="M8 2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6.414a2 2 0 0 0-.586-1.414l-2.414-2.414A2 2 0 0 0 11.586 2H8Zm3.586 1L15 6.414V13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h3.586ZM4 6a1 1 0 0 0-1 1v9a3 3 0 0 0 3 3h6a1 1 0 1 0 0-2H6a1 1 0 0 1-1-1V7a1 1 0 0 0-1-1Z"/>
           </svg>
         </a>
