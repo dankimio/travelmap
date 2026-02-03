@@ -1,25 +1,28 @@
 # Travel Map
 
-Travel Map is a web app that allows you to create a map of the world, marking countries you have visited. Once a country is clicked, it is highlighted in a different colour, indicating that it has been visited. The resulting map can be shared with friends, allowing them to see the user's travel history. This project is a fun and interactive way to keep track of one's travels and share them with others.
+Travel Map lets you mark countries you’ve visited on a world map and share the link with friends.
 
 ![Screenshot](./screenshot.png)
 
 ## Project setup
-```
-npm install
+```sh
+$ pnpm install
 ```
 
 ### Compiles and hot-reloads for development
-```
-npm run dev
+
+```sh
+$ pnpm run dev
 ```
 
 ### Compiles and minifies for production
-```
-npm run build
+
+```sh
+$ pnpm run build
 ```
 
 ### Preview production build
-```
-npm run preview
+
+```sh
+$ pnpm run preview
 ```
