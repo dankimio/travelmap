@@ -6,7 +6,7 @@
     <title>Travel Map</title>
   </head>
   <body>
-    <div id="app" x-data x-init="$store.travel.init()">
+    <div x-data x-init="$store.travel.init()">
       <div class="container mx-auto px-8 py-8 md:py-10 lg:py-12">
         <div class="mb-8" id="search-input">
           <input
@@ -27,9 +27,9 @@
         <div class="mb-8">
           <p class="mb-4 text-lg text-gray-700 text-right tabular-nums">
             Total:
-            <span id="total-count" x-text="$store.travel.selectedCountries.length"></span>
+            <span x-text="$store.travel.selectedCountries.length"></span>
           </p>
-          <div id="country-labels" class="flex flex-wrap gap-y-2 gap-x-1.5">
+          <div class="flex flex-wrap gap-y-2 gap-x-1.5">
             <template x-for="country in $store.travel.selectedCountries" :key="country.code">
               <div
                 class="px-3 py-1.5 inline-block bg-gray-200 rounded-md text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer space-x-0.5"
@@ -42,13 +42,12 @@
           </div>
         </div>
 
-        <div id="share-section">
+        <div class="mb-8" x-show="$store.travel.shareUrl">
           <h2 class="text-2xl font-semibold text-gray-800 mb-2" x-show="$store.travel.shareUrl">
             Share
           </h2>
           <a
             class="text-gray-800 block w-full overflow-hidden leading-tight"
-            x-show="$store.travel.shareUrl"
             :href="$store.travel.shareUrl"
             x-text="$store.travel.shareUrl"
             @click.prevent="$store.travel.copyShareUrl()"
