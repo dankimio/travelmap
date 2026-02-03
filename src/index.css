@@ -16,9 +16,7 @@ body {
 }
 
 .svg-map__location {
-  @apply transition-colors duration-50 ease-out;
-  fill: black;
-  cursor: pointer;
+  @apply transition-colors duration-50 ease-out fill-black cursor-pointer;
 }
 
 .svg-map__location:focus {
