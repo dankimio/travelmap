@@ -1,3 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@reference "tailwindcss/utilities";
+
+body {
+  font-family: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.svg-map {
+  width: 100%;
+  height: auto;
+  stroke: #666;
+  stroke-width: 0.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.svg-map__location {
+  @apply transition-colors duration-50 ease-out fill-black cursor-pointer;
+}
+
+.svg-map__location:focus {
+  @apply outline-0;
+}
+
+.svg-map__location:hover {
+  @apply fill-gray-800 outline-0;
+}
+
+.svg-map__location[aria-checked="true"] {
+  @apply fill-emerald-400 stroke-emerald-50;
+}
+
+.svg-map__location[aria-checked="true"]:hover {
+  @apply text-emerald-500 fill-current;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
