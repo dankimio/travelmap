@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @reference "tailwindcss/utilities";
 
+body {
+  font-family: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
 .svg-map {
   width: 100%;
   height: auto;
