@@ -32,7 +32,7 @@
           <div class="flex flex-wrap gap-y-2 gap-x-1.5">
             <template x-for="country in $store.travel.selectedCountries" :key="country.code">
               <div
-                class="px-3 py-1.5 inline-block bg-gray-200 rounded-md text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer space-x-0.5"
+                class="px-3 py-1.5 inline-block bg-gray-200 rounded-full text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer space-x-0.5"
                 @click="$store.travel.removeCountry(country.code)"
               >
                 <span x-text="country.emoji"></span>

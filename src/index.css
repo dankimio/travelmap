@@ -25,7 +25,7 @@
 }
 
 .svg-map__location[aria-checked="true"]:hover {
-  @apply text-emerald-500 fill-current stroke-current;
+  @apply text-emerald-500 fill-current;
 }
 
 textarea,
