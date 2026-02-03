@@ -77,7 +77,7 @@ document.addEventListener('alpine:init', () => {
 
       filtered.slice(0, 50).forEach(country => {
         const item = document.createElement('li')
-        item.className = 'autosuggest__results-item'
+        item.className = 'px-4 py-3 hover:bg-gray-100 cursor-pointer'
         item.innerHTML = `
           <div class="flex justify-between">
             <span class="my-suggestion-item">${country.name}</span>

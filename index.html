@@ -17,13 +17,17 @@
         <div class="mb-8" id="search-input">
           <input
             id="autosuggest__input"
+            class="rounded-md px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl w-full outline-none"
             type="text"
             autocomplete="off"
             placeholder="Search by country name…"
           />
-          <div class="autosuggest__results-container">
-            <div class="autosuggest__results hidden" id="autosuggest-results">
-              <ul id="autosuggest-list"></ul>
+          <div class="relative w-full">
+            <div
+              class="absolute top-1 w-full lg:max-w-md rounded-lg bg-white border border-gray-200 shadow-lg hidden overflow-auto max-h-[200px]"
+              id="autosuggest-results"
+            >
+              <ul id="autosuggest-list" class="list-none p-0 m-0"></ul>
             </div>
           </div>
         </div>
