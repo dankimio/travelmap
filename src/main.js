@@ -1,13 +1,14 @@
 import './index.css'
 import Alpine from 'alpinejs'
 import world from '@svg-maps/world'
-import { countries as countriesData } from 'countries-list'
+import { countries as countriesData, getEmojiFlag } from 'countries-list'
 
 window.Alpine = Alpine
 
 const allCountries = Object.entries(countriesData).map(([code, data]) => ({
   code: code.toLowerCase(),
-  ...data
+  ...data,
+  emoji: data.emoji || getEmojiFlag?.(code) || ''
 }))
 
 const countriesByCode = new Map(allCountries.map(country => [country.code, country]))

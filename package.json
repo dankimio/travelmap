@@ -8,9 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@svg-maps/world": "^1.0.1",
+    "@svg-maps/world": "^2.0.0",
     "alpinejs": "^3.15.8",
-    "countries-list": "^2.6.1"
+    "countries-list": "^3.2.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
