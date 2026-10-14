@@ -29,6 +29,6 @@ $ npm run preview
 
 ## Hosting
 
-Cloudflare Pages builds `main` with `npm run build`, output directory `dist`, and Node.js 26.
+Cloudflare Pages builds `main` with `npm run build`, output directory `dist`.
 
 Domain: travelmap.dan.kim.
