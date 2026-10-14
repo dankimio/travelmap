@@ -77,14 +77,13 @@ document.addEventListener('alpine:init', () => {
 
       filtered.slice(0, 50).forEach(country => {
         const item = document.createElement('li')
-        item.className = 'px-4 py-3 hover:bg-gray-100 cursor-pointer'
         item.innerHTML = `
-          <div class="flex justify-between">
-            <span class="my-suggestion-item">${country.name}</span>
-            <span>${country.emoji}</span>
-          </div>
+          <button type="button" class="flex items-center justify-between gap-3 w-full min-h-11 rounded-md px-3 py-2.5 text-left text-sm md:text-base leading-6 text-gray-700 hover:bg-gray-100 active:bg-gray-200 focus-visible:bg-gray-100 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-emerald-600 transition-colors cursor-pointer">
+            <span>${country.name}</span>
+            <span class="shrink-0" aria-hidden="true">${country.emoji}</span>
+          </button>
         `
-        item.addEventListener('click', () => {
+        item.querySelector('button').addEventListener('click', () => {
           this.addCountry(country.code)
           input.value = ''
           this.hideSuggestions()
@@ -191,12 +190,14 @@ document.addEventListener('alpine:init', () => {
       svg.setAttribute('class', 'svg-map')
       svg.setAttribute('viewBox', world.viewBox)
       svg.setAttribute('role', 'group')
+      svg.setAttribute('aria-label', 'Countries visited')
 
       world.locations.forEach(location => {
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
         path.setAttribute('d', location.path)
         path.setAttribute('id', location.id)
         path.setAttribute('role', 'checkbox')
+        path.setAttribute('aria-label', location.name)
         path.setAttribute('aria-checked', 'false')
         path.setAttribute('tabindex', '0')
         path.classList.add('svg-map__location')

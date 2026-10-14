@@ -11,19 +11,20 @@
       rel="stylesheet"
     />
   </head>
-  <body class="font-sans text-gray-900" x-data x-init="$store.travel.init()">
+  <body class="font-sans text-gray-900 antialiased" x-data x-init="$store.travel.init()">
     <div class="max-w-6xl mx-auto px-6 md:px-8 py-6 md:py-8">
       <div class="mb-10 md:mb-14 lg:max-w-md" id="search-input">
         <input
           id="autosuggest__input"
-          class="rounded-md px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl w-full outline-none ring-1 ring-gray-300 focus:ring-gray-400"
+          class="min-h-11 rounded-lg border border-gray-300 bg-white px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-6 w-full placeholder:text-gray-500 outline-none transition-colors hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"
           type="text"
+          aria-label="Search by country name"
           autocomplete="off"
           placeholder="Search by country name…"
         />
         <div class="relative w-full">
           <div
-            class="absolute top-1 w-full rounded-lg bg-white border border-gray-200 shadow-lg hidden overflow-auto max-h-[200px]"
+            class="absolute top-2 z-10 w-full rounded-lg bg-white border border-gray-200 shadow-lg shadow-gray-900/10 hidden overflow-auto max-h-[200px] p-1"
             id="autosuggest-results"
           >
             <ul id="autosuggest-list" class="list-none p-0 m-0"></ul>
@@ -34,31 +35,38 @@
       <div class="max-w-5xl mx-auto mb-8" id="map-container"></div>
 
       <div class="mb-8">
-        <p class="mb-4 text-xl tabular-nums space-x-0.5">
-          <span class="uppercase font-medium text-gray-500">Total</span>
-          <span class="font-semibold" x-text="$store.travel.selectedCountries.length"></span>
+        <p class="mb-4 flex items-baseline gap-2 tabular-nums">
+          <span class="text-sm uppercase tracking-wide font-medium text-gray-500">Total</span>
+          <span class="text-xl font-semibold" x-text="$store.travel.selectedCountries.length"></span>
         </p>
 
-        <div class="flex flex-wrap gap-y-2 gap-x-1.5">
+        <div class="flex flex-wrap gap-2">
           <template x-for="country in $store.travel.selectedCountries" :key="country.code">
-            <div
-              class="px-3 py-1.5 inline-block bg-gray-200 rounded-full text-xs md:text-sm hover:bg-gray-800 hover:text-white hover:border-gray-800 cursor-pointer space-x-0.5"
+            <button
+              type="button"
+              class="px-3 py-2 inline-flex items-center gap-1.5 border border-gray-200 bg-gray-100 rounded-full text-xs md:text-sm leading-5 text-gray-700 hover:bg-gray-200 hover:border-gray-300 active:bg-gray-300 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              :aria-label="`Remove ${country.name}`"
               @click="$store.travel.removeCountry(country.code)"
             >
-              <span x-text="country.emoji"></span>
+              <span aria-hidden="true" x-text="country.emoji"></span>
               <span x-text="country.name"></span>
-            </div>
+              <svg class="h-3 w-3 shrink-0 text-gray-500" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <path d="m5 5 6 6m0-6-6 6" />
+              </svg>
+            </button>
           </template>
         </div>
       </div>
 
-      <div class="mb-8" x-show="$store.travel.shareUrl">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-2" x-show="$store.travel.shareUrl">
+      <div class="mb-8" x-cloak x-show="$store.travel.shareUrl">
+        <h2 class="text-sm uppercase tracking-wide font-medium text-gray-500 mb-3">
           Share
         </h2>
         <a
-          class="text-gray-800 inline-flex items-center gap-x-2 max-w-full overflow-hidden leading-tight rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm md:text-base"
+          class="text-gray-700 inline-flex items-center gap-2 max-w-full min-h-11 overflow-hidden leading-6 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50 hover:border-gray-400 active:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
           :href="$store.travel.shareUrl"
+          aria-label="Copy share link"
+          title="Copy share link"
           @click.prevent="$store.travel.copyShareUrl()"
         >
           <span class="min-w-0 flex-1 truncate" x-text="$store.travel.shareUrl"></span>
@@ -68,25 +76,27 @@
         </a>
       </div>
 
-      <p class="text-gray-700 mb-2">
-        Made by
-        <a href="https://dan.kim" target="_blank" class="underline hover:text-gray-500">Dan Kim</a>.
-      </p>
+      <footer class="text-sm leading-6 text-gray-500">
+        <p class="mb-2">
+          Made by
+          <a href="https://dan.kim" target="_blank" class="footer-link">Dan Kim</a>.
+        </p>
 
-      <div class="flex text-gray-800 gap-x-3 md:gap-x-4">
-        <a href="https://twitter.com/dankimio" target="_blank" class="underline hover:text-gray-600">
-          Twitter
-        </a>
-        <a href="https://www.instagram.com/dankimio/" target="_blank" class="underline hover:text-gray-600">
-          Instagram
-        </a>
-        <a href="https://github.com/dankimio" target="_blank" class="underline hover:text-gray-600">
-          GitHub
-        </a>
-        <a href="https://github.com/dankimio/travel-map" target="_blank" class="underline hover:text-gray-600">
-          Source
-        </a>
-      </div>
+        <div class="flex flex-wrap gap-x-3 md:gap-x-4 gap-y-1">
+          <a href="https://twitter.com/dankimio" target="_blank" class="footer-link">
+            Twitter
+          </a>
+          <a href="https://www.instagram.com/dankimio/" target="_blank" class="footer-link">
+            Instagram
+          </a>
+          <a href="https://github.com/dankimio" target="_blank" class="footer-link">
+            GitHub
+          </a>
+          <a href="https://github.com/dankimio/travel-map" target="_blank" class="footer-link">
+            Source
+          </a>
+        </div>
+      </footer>
     </div>
 
     <script type="module" src="/src/main.js"></script>

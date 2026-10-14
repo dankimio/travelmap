@@ -1,9 +1,17 @@
 @import "tailwindcss";
 @reference "tailwindcss/utilities";
 
-body {
-  font-family: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+@theme {
+  --font-sans: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.footer-link {
+  @apply underline decoration-gray-300 underline-offset-4 transition-colors hover:text-gray-900 hover:decoration-gray-500 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600;
 }
 
 .svg-map {
@@ -16,23 +24,30 @@ body {
 }
 
 .svg-map__location {
-  @apply transition-colors duration-50 ease-out fill-black cursor-pointer;
+  @apply motion-safe:transition-colors motion-safe:duration-150 ease-out fill-black cursor-pointer;
 }
 
-.svg-map__location:focus {
-  @apply outline-0;
-}
-
-.svg-map__location:hover {
+.svg-map__location:hover,
+.svg-map__location:focus-visible {
   @apply fill-gray-800 outline-0;
+}
+
+.svg-map__location:focus-visible {
+  @apply stroke-gray-400;
+  stroke-width: 1;
 }
 
 .svg-map__location[aria-checked="true"] {
   @apply fill-emerald-400 stroke-emerald-50;
 }
 
-.svg-map__location[aria-checked="true"]:hover {
-  @apply text-emerald-500 fill-current;
+.svg-map__location[aria-checked="true"]:hover,
+.svg-map__location[aria-checked="true"]:focus-visible {
+  @apply fill-emerald-500;
+}
+
+.svg-map__location[aria-checked="true"]:focus-visible {
+  @apply stroke-emerald-800;
 }
 
 textarea,
