@@ -6,23 +6,29 @@ Travel Map lets you mark countries you’ve visited on a world map and share the
 
 ## Project setup
 ```sh
-$ pnpm install
+$ npm install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```sh
-$ pnpm run dev
+$ npm run dev
 ```
 
 ### Compiles and minifies for production
 
 ```sh
-$ pnpm run build
+$ npm run build
 ```
 
 ### Preview production build
 
 ```sh
-$ pnpm run preview
+$ npm run preview
 ```
+
+## Hosting
+
+Cloudflare Pages builds `main` with `npm run build`, output directory `dist`, and Node.js 26.12.0.
+
+Domains: travelmap.dankim.io, travelmap.dan.kim.
