@@ -31,4 +31,4 @@ $ npm run preview
 
 Cloudflare Pages builds `main` with `npm run build`, output directory `dist`, and Node.js 26.12.0.
 
-Domains: travelmap.dankim.io, travelmap.dan.kim.
+Domain: travelmap.dan.kim.
