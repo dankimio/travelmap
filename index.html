@@ -10,7 +10,7 @@
       <div class="max-w-md mx-auto mb-8 md:mb-10" id="search-input">
         <input
           id="autosuggest__input"
-          class="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-base leading-6 w-full placeholder:text-gray-500 outline-none transition-colors hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"
+          class="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-base leading-6 w-full placeholder:text-gray-500 outline-none transition-colors hover:border-gray-400 focus:border-gray-500 focus:ring-2 focus:ring-gray-500/15"
           type="text"
           aria-label="Search by country name"
           autocomplete="off"
@@ -28,17 +28,17 @@
 
       <div class="max-w-5xl mx-auto mb-8" id="map-container"></div>
 
-      <div class="mb-8">
-        <p class="mb-4 flex items-baseline gap-2 tabular-nums">
+      <section class="max-w-5xl mx-auto mb-10 grid gap-3 md:grid-cols-2 md:gap-x-6" aria-label="Travel summary">
+        <p class="flex items-baseline gap-2 tabular-nums md:min-h-11 md:items-center">
           <span class="text-sm text-gray-500">Total</span>
           <span class="text-lg font-medium" x-text="$store.travel.selectedCountries.length"></span>
         </p>
 
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 md:col-span-2 md:row-start-2" x-cloak x-show="$store.travel.selectedCountries.length">
           <template x-for="country in $store.travel.selectedCountries" :key="country.code">
             <button
               type="button"
-              class="px-3 py-2 inline-flex items-center gap-1.5 border border-gray-200 bg-gray-100 rounded-full text-sm leading-5 text-gray-700 hover:bg-gray-200 hover:border-gray-300 active:bg-gray-300 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              class="px-3 py-2 inline-flex items-center gap-1.5 border border-gray-200 bg-gray-100 rounded-full text-sm leading-5 text-gray-700 hover:bg-gray-200 hover:border-gray-300 active:bg-gray-300 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500"
               :aria-label="`Remove ${country.name}`"
               @click="$store.travel.removeCountry(country.code)"
             >
@@ -50,14 +50,10 @@
             </button>
           </template>
         </div>
-      </div>
-
-      <div class="mb-8" x-cloak x-show="$store.travel.shareUrl">
-        <h2 class="text-sm text-gray-500 mb-3">
-          Share
-        </h2>
         <a
-          class="text-gray-700 inline-flex items-center gap-2 max-w-full min-h-11 overflow-hidden leading-6 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50 hover:border-gray-400 active:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+          class="text-gray-700 inline-flex items-center gap-2 min-w-0 w-full max-w-full md:max-w-sm md:col-start-2 md:row-start-1 md:justify-self-end min-h-11 overflow-hidden leading-6 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50 hover:border-gray-400 active:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500"
+          x-cloak
+          x-show="$store.travel.shareUrl"
           :href="$store.travel.shareUrl"
           aria-label="Copy share link"
           title="Copy share link"
@@ -68,28 +64,16 @@
             <path d="M8 2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6.414a2 2 0 0 0-.586-1.414l-2.414-2.414A2 2 0 0 0 11.586 2H8Zm3.586 1L15 6.414V13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h3.586ZM4 6a1 1 0 0 0-1 1v9a3 3 0 0 0 3 3h6a1 1 0 1 0 0-2H6a1 1 0 0 1-1-1V7a1 1 0 0 0-1-1Z"/>
           </svg>
         </a>
-      </div>
+      </section>
 
-      <footer class="text-sm leading-6 text-gray-500">
-        <p class="mb-2">
+      <footer class="max-w-5xl mx-auto flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm leading-6 text-gray-500">
+        <p>
           Made by
-          <a href="https://dan.kim" target="_blank" class="footer-link">Dan Kim</a>.
+          <a href="https://dan.kim" target="_blank" class="footer-link">Dan Kim</a>
         </p>
-
-        <div class="flex flex-wrap gap-x-3 md:gap-x-4 gap-y-1">
-          <a href="https://twitter.com/dankimio" target="_blank" class="footer-link">
-            Twitter
-          </a>
-          <a href="https://www.instagram.com/dankimio/" target="_blank" class="footer-link">
-            Instagram
-          </a>
-          <a href="https://github.com/dankimio" target="_blank" class="footer-link">
-            GitHub
-          </a>
-          <a href="https://github.com/dankimio/travel-map" target="_blank" class="footer-link">
-            Source
-          </a>
-        </div>
+        <a href="https://github.com/dankimio/travel-map" target="_blank" class="footer-link">
+          Source
+        </a>
       </footer>
     </div>
 

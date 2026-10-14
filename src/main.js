@@ -78,7 +78,7 @@ document.addEventListener('alpine:init', () => {
       filtered.slice(0, 50).forEach(country => {
         const item = document.createElement('li')
         item.innerHTML = `
-          <button type="button" class="flex items-center justify-between gap-3 w-full min-h-11 rounded-md px-3 py-2.5 text-left text-sm leading-6 text-gray-700 hover:bg-gray-100 active:bg-gray-200 focus-visible:bg-gray-100 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-emerald-600 transition-colors cursor-pointer">
+          <button type="button" class="flex items-center justify-between gap-3 w-full min-h-11 rounded-md px-3 py-2.5 text-left text-sm leading-6 text-gray-700 hover:bg-gray-100 active:bg-gray-200 focus-visible:bg-gray-100 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-gray-500 transition-colors cursor-pointer">
             <span>${country.name}</span>
             <span class="shrink-0" aria-hidden="true">${country.emoji}</span>
           </button>
