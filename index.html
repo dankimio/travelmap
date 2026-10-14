@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Map</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body class="font-sans text-gray-900 antialiased" x-data x-init="$store.travel.init()">
     <div class="max-w-6xl mx-auto px-6 md:px-8 py-6 md:py-8">
-      <div class="mb-10 md:mb-14 lg:max-w-md" id="search-input">
+      <div class="max-w-md mx-auto mb-8 md:mb-10" id="search-input">
         <input
           id="autosuggest__input"
-          class="min-h-11 rounded-lg border border-gray-300 bg-white px-3 md:px-4 py-2 md:py-3 text-base md:text-lg leading-6 w-full placeholder:text-gray-500 outline-none transition-colors hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"
+          class="min-h-11 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-base leading-6 w-full placeholder:text-gray-500 outline-none transition-colors hover:border-gray-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"
           type="text"
           aria-label="Search by country name"
           autocomplete="off"
@@ -36,15 +30,15 @@
 
       <div class="mb-8">
         <p class="mb-4 flex items-baseline gap-2 tabular-nums">
-          <span class="text-sm uppercase tracking-wide font-medium text-gray-500">Total</span>
-          <span class="text-xl font-semibold" x-text="$store.travel.selectedCountries.length"></span>
+          <span class="text-sm text-gray-500">Total</span>
+          <span class="text-lg font-medium" x-text="$store.travel.selectedCountries.length"></span>
         </p>
 
         <div class="flex flex-wrap gap-2">
           <template x-for="country in $store.travel.selectedCountries" :key="country.code">
             <button
               type="button"
-              class="px-3 py-2 inline-flex items-center gap-1.5 border border-gray-200 bg-gray-100 rounded-full text-xs md:text-sm leading-5 text-gray-700 hover:bg-gray-200 hover:border-gray-300 active:bg-gray-300 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              class="px-3 py-2 inline-flex items-center gap-1.5 border border-gray-200 bg-gray-100 rounded-full text-sm leading-5 text-gray-700 hover:bg-gray-200 hover:border-gray-300 active:bg-gray-300 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
               :aria-label="`Remove ${country.name}`"
               @click="$store.travel.removeCountry(country.code)"
             >
@@ -59,7 +53,7 @@
       </div>
 
       <div class="mb-8" x-cloak x-show="$store.travel.shareUrl">
-        <h2 class="text-sm uppercase tracking-wide font-medium text-gray-500 mb-3">
+        <h2 class="text-sm text-gray-500 mb-3">
           Share
         </h2>
         <a

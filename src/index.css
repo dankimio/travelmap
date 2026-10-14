@@ -1,11 +1,6 @@
 @import "tailwindcss";
 @reference "tailwindcss/utilities";
 
-@theme {
-  --font-sans: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-}
-
 [x-cloak] {
   display: none !important;
 }
